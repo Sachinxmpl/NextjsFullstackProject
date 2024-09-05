@@ -13,11 +13,13 @@ import {
 import * as React from "react";
 
 interface ResendEmailTemplate {
-	userFirstname: string;
+	userFirstname: string
+	verifyCode : string 
 }
 
  const resendEmailTemplate = ({
 	userFirstname = "Zeno",
+	verifyCode 
 }: ResendEmailTemplate) => (
 	<Html>
 		<Head />
@@ -40,6 +42,7 @@ interface ResendEmailTemplate {
 					that helps you uncover qualified leads and close deals
 					faster.
 				</Text>
+				<h3>{verifyCode}</h3>
 				<Section style={btnContainer}>
 					<Button style={button} href="https://getkoala.com">
 						Get started

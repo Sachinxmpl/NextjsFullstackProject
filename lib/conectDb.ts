@@ -21,3 +21,7 @@ const connectDb = async() : Promise<void> =>{
         process.exit()
      }
 }
+
+export {
+   connectDb
+}
