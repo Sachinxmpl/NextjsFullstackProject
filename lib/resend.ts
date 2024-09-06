@@ -4,7 +4,7 @@ import resendEmailTemplate from "../components/resendEmail_Template";
 import * as React from "react";
 
 import { ApiResonseInterface } from "@/types/apiresponse";
-const resend = new Resend(process.env.R_API);
+const resend = new Resend(process.env.RESENDEMAIL_APIKEY);
 
 export async function sendEmail(
   email: string,

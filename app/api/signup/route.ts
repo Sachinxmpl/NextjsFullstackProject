@@ -5,9 +5,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { sendEmail } from "../../../lib/resend";
 
 export async function POST(req: NextRequest) {
+  const { username, email, password } = await req.json();
   try {
     await connectDb();
-    const { username, email, password } = await req.json();
     const Verifieduser = await UserModel.findOne({
       username,
       isVerified: true,
@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
       message: "Please verify your email ",
     });
   } catch (e) {
-    console.log("Error ", e);
+    console.log("Error found in signup route ");
     return NextResponse.json({
       success: false,
       message: "something went wrong ",
